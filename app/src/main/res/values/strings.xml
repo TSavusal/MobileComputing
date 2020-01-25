@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MobiCompLab1</string>
+    <string name="reminder_tool">Reminder Tool</string>
+    <string name="button">Button</string>
 </resources>
