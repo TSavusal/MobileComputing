@@ -12,7 +12,7 @@ class ReminderAdapter(context: Context, private val list: List<String>) : BaseAd
 
     private val inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+    override fun getView(position: Int, pl: View?, parent: ViewGroup?): View {
         val row = inflater.inflate(R.layout.list_view_item, parent,false)
         row.itemMessage.text = list[position]
         row.itemTrigger.text = "hello"
