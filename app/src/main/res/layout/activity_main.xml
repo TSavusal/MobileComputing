@@ -90,4 +90,9 @@
         android:layout_width=""
         android:layout_height=""/>
 
+    <ListView
+        android:id="@id/itemTrigger"
+        android:layout_width=""
+        android:layout_height=""/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
