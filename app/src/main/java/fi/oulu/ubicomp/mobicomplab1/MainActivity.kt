@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, TimeActivity::class.java)
             startActivity(intent)
         }
-        //Open activity for settung up time-based remindre
+        //Open activity for settung up time-based reminder
         fab_time.setOnClickListener {
             val intent = Intent(applicationContext, TimeActivity::class.java)
             startActivity(intent)
