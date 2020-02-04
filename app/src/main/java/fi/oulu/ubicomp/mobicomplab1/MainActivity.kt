@@ -42,24 +42,49 @@ class MainActivity : AppCompatActivity() {
         }
 
         //Open activity for setting up location-based reminder
-        fab_map.setOnClickListener{
+        fab_map.setOnClickListener {
             val intent = Intent(applicationContext, MapActivity::class.java)
             startActivity(intent)
         }
 
 
-        val data = arrayOf("Oulu", "Helsinki", "Tampere")
+        doAsync {}
 
-        val reminderAdapter = ReminderAdapter(applicationContext, data)
-        list.adapter = reminderAdapter
+        val db = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java,
+            name: "reminders").build()
+        val reminders = db.reminderDao().getReminders()
+        db.close()
 
+            uiThread {
 
-
-
-
-
-
-
+                if (reminders.isNotEmpty()
+                val adapter = ReminderAdapter(applicationContext, reminders)
+                list.adapter = adapter
+                )
+                else (
+                    toast("No reminders yet")
+                    )
+            }
+        }
+    }
+    override fun onResume() {
+        super.onResume()
 
     }
+
+    private fun refreshList() {
+
+        doAsync {
+            val db = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "reminder").build()
+            db.reminderDao().insert(reminder)
+            db.close()
+
+            finish()
+        }
+        ) else (
+        toast("Wrong data")
+        )
+
 }
