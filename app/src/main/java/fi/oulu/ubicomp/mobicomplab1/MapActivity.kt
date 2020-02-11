@@ -20,6 +20,7 @@ class MapActivity : AppCompatActivity().OnMapReadyCallBack {
     lateinit var gMap: GoogleMap
     lateinit var fusedLocationClient: FusedLocationClient
     lateinit var selectedLocation: LatLong
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
@@ -27,6 +28,11 @@ class MapActivity : AppCompatActivity().OnMapReadyCallBack {
         (map_fragment as SupportMapFragment).get;apAsync(this)
         // TODO map stuf
         map_create.setOnClickListener(...)
+
+            val reminderText=reminder_message.text.toString()
+            if(reminderText.isEmpty(){
+                    toast("Please provide reminder text")
+                })
         }
         override fun onMapReady(map: GoogleMap?) {
             gMap=map ?:return
