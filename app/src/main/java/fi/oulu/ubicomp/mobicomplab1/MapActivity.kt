@@ -19,7 +19,7 @@ class MapActivity : AppCompatActivity().OnMapReadyCallBack {
 
     lateinit var gMap: GoogleMap
     lateinit var fusedLocationClient: FusedLocationClient
-    lateinit var selectedLocation: 
+    lateinit var selectedLocation: LatLong
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
@@ -69,6 +69,7 @@ class MapActivity : AppCompatActivity().OnMapReadyCallBack {
 
                 } catch (e:Exception)
             val marker=addMarker(MarkerOptions().position(location))
+            marker.showInfoWindow()
 
             )
 
