@@ -8,7 +8,6 @@ import org.jetbrains.anko.toast
 class ReminderReceiver : BroadcastReceiver() {
 
 
-
     override fun onReceive(context: Context, intent: Intent?) {
 
         val text = intent.getStringExtra( "message")
@@ -17,5 +16,6 @@ class ReminderReceiver : BroadcastReceiver() {
 
 
     }
+
 
 }
